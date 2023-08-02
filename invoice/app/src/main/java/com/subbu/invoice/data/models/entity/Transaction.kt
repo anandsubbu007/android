@@ -3,6 +3,7 @@ package com.subbu.invoice.data.models.entity
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.ForeignKey
+import androidx.room.Index
 import androidx.room.PrimaryKey
 import com.subbu.invoice.data.models.enums.TransType
 import java.time.LocalDateTime
@@ -12,16 +13,16 @@ import java.time.LocalDateTime
     tableName = "tTransactions", foreignKeys = [
         ForeignKey(
             entity = Invoice::class,
-            childColumns = ["invoiceNo"], parentColumns = ["id"],
+            childColumns = ["invoiceNo"], parentColumns = ["invoiceNo"],
         ),
         ForeignKey(
             entity = Customer::class,
             childColumns = ["customerId"], parentColumns = ["id"],
         ),
-    ]
+    ], indices = [Index("invoiceNo"),Index("customerId")]
 )
 data class Transaction(
-    @PrimaryKey(autoGenerate = true) val id: Int = 0,
+    @PrimaryKey(autoGenerate = true) @ColumnInfo(name = "id") val id: Int = 0,
     @ColumnInfo(name = "customerId") val customerId: String,
     @ColumnInfo(name = "invoiceNo") val invoiceNo: Int,
     val type: TransType,

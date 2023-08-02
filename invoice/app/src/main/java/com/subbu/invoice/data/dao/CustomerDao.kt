@@ -1,3 +1,5 @@
+@file:Suppress("Since15")
+
 package com.subbu.invoice.data.dao
 
 import androidx.room.Dao
@@ -7,25 +9,25 @@ import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import androidx.room.Update
 import com.subbu.invoice.data.models.entity.Customer
-import com.subbu.invoice.data.models.entity.Invoice
+import java.util.concurrent.Flow
 
 @Dao
 interface CustomerDao {
-    @Query("SELECT * FROM customer ORDER BY id ASC")
-    fun getAll(): List<Customer>
-
-    @Query("SELECT * FROM customer WHERE id=:id")
-    fun get(id: Int): Customer
+//    @Query("SELECT * FROM customer ORDER BY id ASC")
+//    suspend fun getAll()
+//
+//    @Query("SELECT * FROM customer WHERE id=:id")
+//    fun get(id: Int)
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    suspend fun create(note: Customer)
+     fun insert(note: Customer)
 
-    @Update
-    suspend fun update(note: Customer)
-
+//    @Update
+//    suspend fun update(note: Customer)
+//
     @Delete
-    suspend fun delete(note: Customer)
+    fun delete(note: Customer)
 
-    @Query("DELETE FROM customer")
-    suspend fun deleteAll()
+//    @Query("DELETE FROM customer")
+//    suspend fun deleteAll()
 }

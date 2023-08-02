@@ -12,21 +12,21 @@ import java.util.concurrent.Flow
 
 @Dao
 interface ItemDao {
-    @Query("SELECT * FROM Items ORDER BY id ASC")
-    fun getAll(): List<Item>
+//    @Query("SELECT * FROM Items ORDER BY id ASC")
+//    fun getAll(): List<Item>
+//
+//    @Query("SELECT * FROM Items WHERE id=:id")
+//    fun get(id: Int): Item
 
-    @Query("SELECT * FROM Items WHERE id=:id")
-    fun get(id: Int): Item
+//    @Insert(onConflict = OnConflictStrategy.IGNORE)
+//    suspend fun create(note: Item)
+//
+//    @Update
+//    suspend fun update(note: Item)
+//
+//    @Delete
+//    suspend fun delete(note: Item)
 
-    @Insert(onConflict = OnConflictStrategy.IGNORE)
-    suspend fun create(note: Item)
-
-    @Update
-    suspend fun update(note: Item)
-
-    @Delete
-    suspend fun delete(note: Item)
-
-    @Query("DELETE FROM Items")
-    suspend fun deleteAll()
+//    @Query("DELETE FROM Items")
+//    suspend fun deleteAll()
 }

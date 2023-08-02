@@ -8,19 +8,21 @@ class CustomerRepoImp(
     private val dao: CustomerDao
 ) : CustomerRepo {
     override fun getAll(): List<Customer> {
-        return dao.getAll()
-    }
+//        return dao.getAll()
+        return  emptyList()
+;    }
 
     override fun get(id: Int): Customer {
-        return dao.get(id)
+        TODO("Not yet implemented")
     }
 
+
     override suspend fun create(data: Customer) {
-        dao.create(data)
+//        dao.create(data)
     }
 
     override suspend fun update(data: Customer) {
-        dao.update(data)
+//        dao.update(data)
     }
 
     override suspend fun delete(data: Customer) {
@@ -28,6 +30,6 @@ class CustomerRepoImp(
     }
 
     override suspend fun deleteAll() {
-        dao.deleteAll()
+//        dao.deleteAll()
     }
 }

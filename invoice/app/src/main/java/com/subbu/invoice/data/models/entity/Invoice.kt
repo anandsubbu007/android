@@ -16,11 +16,11 @@ import java.time.LocalDateTime
     )], indices = [Index("customer_id")]
 )
 data class Invoice(
-    @PrimaryKey(autoGenerate = true)   @ColumnInfo(name = "invoiceNo") val invoiceNo: Int = 0,
+    @PrimaryKey(autoGenerate = true) @ColumnInfo(name = "invoiceNo") val invoiceNo: Int = 0,
     val status: String,
     val mobileNo: String,
     val details: String,
-    @ColumnInfo(name = "customer_id" ) val customer_id: String,
+    @ColumnInfo(name = "customer_id") val customer_id: String,
     val createdAt: LocalDateTime = LocalDateTime.now()
 ) {}
 
@@ -35,10 +35,10 @@ data class Invoice(
             childColumns = ["itemId"], parentColumns = ["id"],
         ),
     ],
-    indices = [Index("itemId"),Index("invoiceNo")]
+    indices = [Index("itemId"), Index("invoiceNo")]
 )
 data class InvoiceEntry(
-    @PrimaryKey(autoGenerate = true)@ColumnInfo(name = "id")  val id: Int = 0,
+    @PrimaryKey(autoGenerate = true) @ColumnInfo(name = "id") val id: Int = 0,
     @ColumnInfo(name = "invoiceNo") val invoiceNo: Int,
     @ColumnInfo(name = "itemId") val itemId: String,
     val itemName: String,
@@ -46,10 +46,5 @@ data class InvoiceEntry(
     val qty: Float,
     val tax: Float,
 ) {}
-
-
-
-
-
 
 

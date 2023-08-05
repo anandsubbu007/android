@@ -12,21 +12,21 @@ import com.subbu.invoice.data.models.entity.Transaction
 
 @Dao
 interface TransactionDao {
-//    @Query("SELECT * FROM tTransactions ORDER BY invoiceNo ASC")
-//    fun getAll(): List<Invoice>
-//
-//    @Query("SELECT * FROM tTransactions WHERE id=:id")
-//    fun get(id: Int): Invoice
+    @Query("SELECT * FROM tTransactions ORDER BY id")
+    fun getAll(): List<Transaction>
 
-//    @Insert(onConflict = OnConflictStrategy.IGNORE)
-//    suspend fun create(note: Invoice)
-//
-//    @Update
-//    suspend fun update(note: Invoice)
-//
-//    @Delete
-//    suspend fun delete(note: Invoice)
+    @Query("SELECT * FROM tTransactions WHERE id=:transId")
+    fun get(transId: Int): Transaction
 
-//    @Query("DELETE FROM Invoice")
-//    suspend fun deleteAll()
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
+     fun create(data: Transaction)
+
+    @Update
+     fun update(data: Transaction)
+
+    @Delete
+     fun delete(data: Transaction)
+
+    @Query("DELETE FROM tTransactions")
+     fun deleteAll()
 }

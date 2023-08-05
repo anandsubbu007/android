@@ -17,14 +17,3 @@ class LocalDateTimeConverter {
     }
 }
 
-class PriorityConverter {
-    @TypeConverter
-    fun fromPriority(priority: Priority): String {
-        return priority.name.toString()
-    }
-
-    @TypeConverter
-    fun toPriority(priority: String): Priority {
-        return Priority.valueOf(priority)
-    }
-}

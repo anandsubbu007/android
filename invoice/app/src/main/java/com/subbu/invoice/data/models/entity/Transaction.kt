@@ -19,7 +19,7 @@ import java.time.LocalDateTime
             entity = Customer::class,
             childColumns = ["customerId"], parentColumns = ["id"],
         ),
-    ], indices = [Index("invoiceNo"),Index("customerId")]
+    ], indices = [Index("invoiceNo"), Index("customerId")]
 )
 data class Transaction(
     @PrimaryKey(autoGenerate = true) @ColumnInfo(name = "id") val id: Int = 0,
@@ -27,7 +27,7 @@ data class Transaction(
     @ColumnInfo(name = "invoiceNo") val invoiceNo: Int,
     val type: TransType,
     val amount: Float,
-    val details:Float,
+    val details: Float,
     val date: LocalDateTime = LocalDateTime.now(),
 ) {}
 

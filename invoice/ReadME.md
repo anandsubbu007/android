@@ -33,6 +33,7 @@ Application developed and tested on personal POCO M3
  - Mvvm Archetecture
  - Voucher - CRUD
  - Invoice - CRUD
+ - Splash Screen - Plain Color
 
 # Info
 

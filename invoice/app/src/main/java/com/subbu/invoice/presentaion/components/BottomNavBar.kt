@@ -35,7 +35,7 @@ fun BottomNavBar(viewModel: HomeViewModel) {
                     Text(
                         text = item.title,
                         color = if (isSelected) Color.White else Color.White.copy(0.4f),
-                        fontSize =  if (isSelected) 21.sp else 19.sp,
+                        fontSize =  if (isSelected) 17.sp else 15.sp,
                     )
                 }, modifier = Modifier.background(MaterialTheme.colorScheme.primary),
                 selectedContentColor = Color.White,

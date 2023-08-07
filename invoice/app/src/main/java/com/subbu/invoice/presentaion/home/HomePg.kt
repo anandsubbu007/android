@@ -21,6 +21,8 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.subbu.invoice.navigation.SetupNavigation
+import com.subbu.invoice.presentaion.Invoice.InvoiceView
+import com.subbu.invoice.presentaion.Voucher.VoucherPg
 import com.subbu.invoice.presentaion.components.AppBar
 import org.koin.androidx.compose.koinViewModel
 import com.subbu.invoice.presentaion.components.BottomNavBar
@@ -54,53 +56,18 @@ fun HomePg(
 fun HomeContent(viewModel: HomeViewModel) {
     NavHost(
         navController = viewModel.tabNavController,
-        startDestination = BottomNavItem.Settings.screen_route,
+        startDestination = BottomNavItem.Payments.screen_route,
     ) {
 
         composable(BottomNavItem.Invoices.screen_route) {
-            tabOne()
+            InvoiceView(homeController = viewModel)
         }
         composable(BottomNavItem.Payments.screen_route) {
-            tabTwo()
+            VoucherPg(viewModel)
         }
         composable(BottomNavItem.Settings.screen_route) {
             SettingPg(homeController = viewModel)
         }
     }
 
-}
-
-@OptIn(ExperimentalMaterial3Api::class)
-@Composable
-fun tabOne() {
-    Column(
-        modifier = Modifier
-            .fillMaxSize()
-            .wrapContentSize(Alignment.Center)
-    ) {
-        Text(
-            text = "Home Screen",
-            fontWeight = FontWeight.Bold,
-            color = Color.Black,
-            modifier = Modifier.align(Alignment.CenterHorizontally),
-            textAlign = TextAlign.Center,
-        )
-    }
-}
-
-@Composable
-fun tabTwo() {
-    Column(
-        modifier = Modifier
-            .fillMaxSize()
-            .wrapContentSize(Alignment.Center)
-    ) {
-        Text(
-            text = "Home 1",
-            fontWeight = FontWeight.Bold,
-            color = Color.Black,
-            modifier = Modifier.align(Alignment.CenterHorizontally),
-            textAlign = TextAlign.Center,
-        )
-    }
 }

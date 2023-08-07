@@ -16,11 +16,6 @@ class HomeViewModel(
 ) : ViewModel() {
     lateinit var tabNavController: NavHostController;
     lateinit var AppNavController: NavController;
-
-
-    init {
-//        customerRepo.setUpDb();
-    }
 }
 
 

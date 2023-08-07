@@ -14,16 +14,16 @@
         android:theme="@style/Theme.Invoice"
         tools:targetApi="31">
         <activity
-            android:name=".presentaion.MainActivity"
+            android:name=".presentaion.SplashActivity"
             android:exported="true"
             android:label="@string/app_name"
-            android:theme="@style/Theme.Invoice">
+            android:theme="@style/SplashScreenTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".presentaion.MainActivity" />
     </application>
 
 </manifest>

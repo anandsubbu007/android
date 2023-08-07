@@ -12,6 +12,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
 import com.subbu.invoice.presentaion.Form.Invoice.NewInvoicePg
+import com.subbu.invoice.presentaion.components.SplashScreen
 import com.subbu.invoice.presentaion.home.HomePg
 import com.subbu.invoice.presentaion.items.ItemsListingPg
 import java.security.KeyStore.Entry
@@ -24,7 +25,11 @@ fun SetupNavigation(
     NavHost(
         navController = navController,
         startDestination = Screens.home.route
+//        startDestination = "splash_screen"
     ) {
+//        composable("splash_screen") {
+//            SplashScreen(navController = navController)
+//        }
         composable(
             route = Screens.home.route
         ) {
